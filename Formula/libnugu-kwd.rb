@@ -5,7 +5,7 @@ class LibnuguKwd < Formula
   homepage "https://github.com/nugulinux/keyword-detector"
   # Use URL fragment to prevent brew audit failures for private repository.
   url "https://github.com/nugulinux/#keyword-detector/releases/download/0.9.38ubuntu6osx/libnugu-kwd-src.tgz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-  sha256 "ed74490c6215c1fcc0dbe3cea03e01f4c7b5057c8be56014c87a46d56ac547fc"
+  sha256 "3ac6790025f169b9eb85ef5be7749acd6a4cf6def5dd4ac50c0621b8721a8371"
   license "Apache-2.0"
 
   bottle do

@@ -1,4 +1,4 @@
-# Webispy Sdk
+# NUGU SDK
 
 ## How do I install these formulae?
 

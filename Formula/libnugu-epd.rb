@@ -10,8 +10,9 @@ class LibnuguEpd < Formula
 
   bottle do
     root_url "https://github.com/webispy/homebrew-sdk/releases/download/libnugu-epd-2.1.11"
-    sha256 cellar: :any, monterey: "5a4d697ecdf4f2a5296a56366f07edfd4b49b35df7256838d93a1850f717d530"
-    sha256 cellar: :any, big_sur:  "1d5f3d5cf2c54cadadd498d49dc4a20a4af2031067f5e0633a2d2c09a5233b2e"
+    rebuild 1
+    sha256 cellar: :any, monterey: "19bb587933274c2e143b16c22a9683ebc342e35fc3a32a442ec301608e7bd342"
+    sha256 cellar: :any, big_sur:  "ea3daf95717375100907d30b71601b89c54df475f5f2b211c53b124647bf2f24"
   end
 
   depends_on "cmake" => :build

@@ -5,7 +5,7 @@ class LibnuguEpd < Formula
   homepage "https://github.com/nugulinux/endpoint-detector"
   # Use URL fragment to prevent brew audit failures for private repository.
   url "https://github.com/nugulinux/#endpoint-detector/releases/download/2.1.11ubuntu5osx/libnugu-epd-src.tgz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-  sha256 "d2a711aff46b51abbcc392258f4a84f88c2fb68426bfbfa84f72f54a052f0f8d"
+  sha256 "e005e99f722ba80745b31475a61a47fb1f8c3dc2569e0c0dc985309abd6e4cfb"
   license "Apache-2.0"
 
   bottle do

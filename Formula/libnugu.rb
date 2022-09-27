@@ -21,11 +21,12 @@ class Libnugu < Formula
   depends_on "curl"
   depends_on "glib"
   depends_on "jsoncpp"
+  depends_on "libnugu-epd"
+  depends_on "libnugu-kwd"
   depends_on "openssl"
 
   def install
     args = %W[
-      -DENABLE_VENDOR_LIBRARY=OFF
       -DENABLE_LIBRARY_ONLY=ON
       -DENABLE_BUILTIN_JSONCPP=OFF
       -DENABLE_BUILTIN_CURL=OFF

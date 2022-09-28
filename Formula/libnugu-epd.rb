@@ -8,6 +8,14 @@ class LibnuguEpd < Formula
   sha256 "e005e99f722ba80745b31475a61a47fb1f8c3dc2569e0c0dc985309abd6e4cfb"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/webispy/homebrew-sdk/releases/download/libnugu-epd-2.1.11"
+    rebuild 2
+    sha256 cellar: :any, arm64_monterey: "1ba32f6c0f311261926505f50f27f4f1ce12d0268be04e65d2561c112c44a248"
+    sha256 cellar: :any, monterey:       "68aa2b38ef2cd87d317ed1b1c19d4287637875b64da41ae37d5e2093bd330022"
+    sha256 cellar: :any, big_sur:        "a3c63bad2990267ed71f714a969f1bc88c144611d8a185951fc7156294390229"
+  end
+
   depends_on "cmake" => :build
 
   def install

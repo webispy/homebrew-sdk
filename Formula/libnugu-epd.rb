@@ -1,11 +1,8 @@
-require_relative "../lib/GitHubPrivateRepositoryReleaseDownloadStrategy"
-
 class LibnuguEpd < Formula
   desc "C/C++ library for NUGU SDK EndPoint detector"
-  homepage "https://github.com/nugulinux/endpoint-detector"
-  # Use URL fragment to prevent brew audit failures for private repository.
-  url "https://github.com/nugulinux/#endpoint-detector/releases/download/2.1.11ubuntu5osx/libnugu-epd-src.tgz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-  sha256 "e005e99f722ba80745b31475a61a47fb1f8c3dc2569e0c0dc985309abd6e4cfb"
+  homepage "https://github.com/nugulinux/nugu-epd"
+  url "https://github.com/nugulinux/nugu-epd/releases/download/2.1.11ubuntu5/libnugu-epd-src.tgz"
+  sha256 "511ec9b5d08c55689eee7ee72412fb4cb29b87c644edeaf8b88f30cb48298af9"
   license "Apache-2.0"
 
   bottle do

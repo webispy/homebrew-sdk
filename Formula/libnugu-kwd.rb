@@ -7,10 +7,10 @@ class LibnuguKwd < Formula
 
   bottle do
     root_url "https://github.com/webispy/homebrew-sdk/releases/download/libnugu-kwd-0.9.38"
-    rebuild 3
-    sha256 cellar: :any, arm64_monterey: "a531b4f7168dced23960234770fbe33aae3897519e5a394c78706560e3d5f890"
-    sha256 cellar: :any, monterey:       "bd084749a53dfca65350920c019f7a2f3213a65a93a6dd838fbfe6898008e678"
-    sha256 cellar: :any, big_sur:        "c1bf6d4e23d16af0a01f1d458748da4e0cefcfff085d782858de75002329a75b"
+    rebuild 4
+    sha256 cellar: :any, arm64_monterey: "25ff8d054c1bdac4f3800a8e3e20cad66da471763c2d9fda9d2288b00904a43b"
+    sha256 cellar: :any, monterey:       "0346bcae90599a4453b48d5b7b6a59cfa31dc1c55434cc6a4c1bdc36ad63f49c"
+    sha256 cellar: :any, big_sur:        "3a173aec95c08f301926522713a2762f3a3cd8ea26a53e424be8ea0f7ff033e2"
   end
 
   depends_on "cmake" => :build

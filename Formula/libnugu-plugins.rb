@@ -1,9 +1,9 @@
 class LibnuguPlugins < Formula
   desc "Default Plugins for NUGU SDK"
   homepage "https://github.com/nugu-developers/nugu-linux"
-  url "https://github.com/nugu-developers/nugu-linux/archive/cac6425.tar.gz"
+  url "https://github.com/nugu-developers/nugu-linux/archive/742ca26.tar.gz"
   version "1.7.3"
-  sha256 "b19cc823732cf7ebecffc792e99d400b3173dc8b1fa1f28f7c112d5ede5b03f5"
+  sha256 "b5d74620bd33f27118e3c30a5c27838a3b43e434b8640b58c6fef4674f6e6cd7"
   license "Apache-2.0"
 
   # brew install --build-from-source --HEAD libnugu

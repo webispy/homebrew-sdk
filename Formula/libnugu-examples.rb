@@ -11,10 +11,10 @@ class LibnuguExamples < Formula
 
   bottle do
     root_url "https://github.com/webispy/homebrew-sdk/releases/download/libnugu-examples-1.7.3"
-    rebuild 2
-    sha256 cellar: :any, arm64_monterey: "185c6da6394b6fcce5d94db5b554e865c867b81db5f76e8c11b8c0ee5e120ddc"
-    sha256 cellar: :any, monterey:       "94b46fba4203af2caa22d5d5f7e55b4ccbefdee43e4a7dcbdc82f514be31038b"
-    sha256 cellar: :any, big_sur:        "43a1f7ce21118878b2566c272bff56631eafc4348cfb5a0536afaf1b5810657a"
+    rebuild 3
+    sha256 cellar: :any, arm64_monterey: "5fef9fa2ee7621f25c63f778c9f0e7d9e5073cc321d4cd27a9748918f2d2baba"
+    sha256 cellar: :any, monterey:       "b1225812094cfb914b6b6266beae78e619c157ae69a437f215ffaffe8f9b1ca6"
+    sha256 cellar: :any, big_sur:        "e0df56ff31466c3245df7e7dc8c9a7462f4d1811aed51393cd3d90dd518b4e96"
   end
 
   depends_on "cmake" => :build

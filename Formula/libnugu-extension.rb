@@ -4,9 +4,9 @@ class LibnuguExtension < Formula
   desc "C/C++ library for NUGU SDK Extension"
   homepage "https://github.com/nugulinux/nugu-extension"
   # Use URL fragment to prevent brew audit failures for private repository.
-  url "https://github.com/nugulinux/#nugu-extension/archive/145d9b9.tar.gz", using: GitHubPrivateRepositorySnapshotDownloadStrategy
+  url "https://github.com/webispy/#nugu-extension/archive/4e39486.tar.gz", using: GitHubPrivateRepositorySnapshotDownloadStrategy
   version "1.7.3"
-  sha256 "2a3a1dcfbc893be5c122045a34fa83954b79209d333e42bdc9004e2dd98bb160"
+  sha256 "7ccbacb83e71af853d2037521bca468f1bf3b80b2d9acfb40b71413eda756efb"
   license "Apache-2.0"
 
   bottle do
@@ -22,8 +22,11 @@ class LibnuguExtension < Formula
   depends_on "sqlite3"
 
   def install
-    args = %w[
+    args = %W[
       -DENABLE_LIBRARY_ONLY=ON
+      -DENABLE_SYSTEM_STORAGE_DIR=OFF
+      -DENABLE_HOME_STORAGE_DIR=ON
+      -DMODEL_DIR=#{Formula["libnugu"].share}/nugu/model
       -DPACKAGING=ON
     ]
 

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class GitHubPrivateRepositoryReleaseDownloadStrategy < CurlDownloadStrategy
+class GitHubPrivateRepositorySnapshotDownloadStrategy < CurlDownloadStrategy
   require "utils/formatter"
   require "utils/github"
 
@@ -11,11 +11,11 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < CurlDownloadStrategy
   end
 
   def parse_url_pattern
-    unless (match = url.match(%r{https://github.com/([^/]+)/#([^/]+)/releases/download/([^/]+)/(\S+)}))
+    unless (match = url.match(%r{https://github.com/([^/]+)/#([^/]+)/archive/(\S+).tar.gz}))
       raise CurlDownloadStrategyError, "Invalid archive url pattern for GitHub Repository."
     end
 
-    _, @owner, @repo, @tag, @filename = *match
+    _, @owner, @repo, @filepath = *match
   end
 
   def set_github_token
@@ -41,7 +41,7 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < CurlDownloadStrategy
   end
 
   def download_url
-    "https://api.github.com/repos/#{@owner}/#{@repo}/releases/assets/#{asset_id}"
+    "https://api.github.com/repos/#{@owner}/#{@repo}/tarball/#{@filepath}"
   end
 
   private
@@ -53,22 +53,5 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < CurlDownloadStrategy
                   "--header", "Authorization: Bearer #{@github_token}",
                   "--header", "Accept: application/vnd.github+json",
                   to: temporary_path
-  end
-
-  def asset_id
-    @asset_id ||= resolve_asset_id
-  end
-
-  def resolve_asset_id
-    release_metadata = fetch_release_metadata
-    assets = release_metadata["assets"].select { |a| a["name"] == @filename }
-    raise CurlDownloadStrategyError, "Asset file not found." if assets.empty?
-
-    assets.first["id"]
-  end
-
-  def fetch_release_metadata
-    release_url = "https://api.github.com/repos/#{@owner}/#{@repo}/releases/tags/#{@tag}"
-    GitHub::API.open_rest(release_url)
   end
 end

@@ -10,12 +10,25 @@ jobs:
   test-bot:
     strategy:
       matrix:
-        os: [macos-12, macos-11]
+        os: [macos-12, macos-11, self-hosted]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Cleanup Homebrew
+        run: |
+          # To trick shellenv.sh into always printing the output, prepend
+          # meaningless '/bin/' path to the PATH environment variable.
+          export PATH=/bin:$PATH
+          brew shellenv
+          eval "$(brew shellenv)"
+          cd $HOMEBREW_REPOSITORY
+          pwd
+          git reset --hard
+          git clean -dfx
+          ls -l
 
       - name: Cache Homebrew Bundler RubyGems
         id: cache
@@ -44,3 +57,12 @@ jobs:
         with:
           name: bottles
           path: '*.bottle.*'
+
+      - name: Cleanup Homebrew
+        run: |
+          export PATH=/bin:$PATH
+          brew shellenv
+          eval "$(brew shellenv)"
+          cd $HOMEBREW_REPOSITORY
+          git reset --hard
+          git clean -dfx

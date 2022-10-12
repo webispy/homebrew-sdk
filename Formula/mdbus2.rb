@@ -9,6 +9,12 @@ class Mdbus2 < Formula
   # brew install --build-from-source --HEAD libnugu
   head "https://github.com/webispy/mdbus.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/webispy/homebrew-sdk/releases/download/mdbus2-2.3.3"
+    sha256 cellar: :any, monterey: "b39c8061bd5c964f858fe462bad0eac57b8fbd3c15a44e50b66a50a05b1916e8"
+    sha256 cellar: :any, big_sur:  "64ba38ba9b652039912f059d92d5767782ca6e46619ae099ffa16208108b827b"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build

@@ -6,6 +6,12 @@ class NuguDbusDaemon < Formula
   sha256 "20d9d12521add78db62be75a93cee3299d4173e8ebf73500d47f868f9307a57b"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/webispy/homebrew-sdk/releases/download/nugu-dbus-daemon-1.7.3"
+    sha256 cellar: :any_skip_relocation, monterey: "4b8afd995b044c9f8e0d4ebe5cb4c6661075a1e7bf2df949a590131113a35e88"
+    sha256 cellar: :any_skip_relocation, big_sur:  "656fc969a8ca73f051486eff48fafb3f2d9d45e11433254284cb29f135b79dba"
+  end
+
   depends_on "cmake" => :build
   depends_on "dbus"
 

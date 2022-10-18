@@ -11,8 +11,9 @@ class NuguDaemon < Formula
 
   bottle do
     root_url "https://github.com/webispy/homebrew-sdk/releases/download/nugu-daemon-1.7.3"
-    sha256 monterey: "d8b5c24ab278586ead76045a5d9951dcc11ff732f555017f036a1eb56ca2e66b"
-    sha256 big_sur:  "8852eca9a809bad9726bda3891ce9bbed836c65216e565b5b6c03aa173ee2f6b"
+    rebuild 1
+    sha256 monterey: "b32b50863c5ae23938ba0018dd85957d62c87f6bc7b6eef7806b1d5b6a35ebec"
+    sha256 big_sur:  "74662e467b363353c44a3dd7dfeb4a58457e13b2990fb6308c4f045060a53637"
   end
 
   depends_on "cmake" => :build

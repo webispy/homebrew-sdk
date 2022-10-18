@@ -26,7 +26,7 @@ class NuguDaemon < Formula
     args = %W[
       -DENABLE_PULSEAUDIO=OFF
       -DENABLE_SESSION_BUS=ON
-      -DSESSION_BUS_ADDRESS=unix:path=#{HOMEBREW_PREFIX}/var/run/nugu_dbus_daemon.sock
+      -DSESSION_BUS_ADDRESS=unix:path=#{HOMEBREW_PREFIX}#{Formula["nugu-dbus-daemon"].sock_path}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

@@ -1,16 +1,16 @@
 class NuguDaemon < Formula
   desc "Daemon for NUGU service"
   homepage "https://github.com/nugulinux/nugu-daemon"
-  url "https://github.com/nugulinux/nugu-daemon/archive/fc4b05c.tar.gz"
-  version "1.7.3"
-  sha256 "26e7376ba6e50517c3b331934c14c77cdf8fcb5ac71831218e4985e41dac691b"
+  # Use URL fragment to prevent brew audit failures for private repository.
+  url "https://github.com/nugulinux/#nugu-daemon/archive/refs/tags/v1.7.4.tar.gz", using: GitHubPrivateRepositorySnapshotDownloadStrategy
+  sha256 "a4c7e842c9e4c19c771f1a2e0ab60211ad54d57c2aa4c275317aa3a657f22d3e"
   license "Apache-2.0"
 
   # brew install --build-from-source --HEAD nugu-daemon
   head "https://github.com/nugulinux/nugu-daemon.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/webispy/homebrew-sdk/releases/download/nugu-daemon-1.7.3"
+    root_url "https://github.com/webispy/homebrew-sdk/releases/download/nugu-daemon-1.7.4"
     rebuild 1
     sha256 monterey: "b32b50863c5ae23938ba0018dd85957d62c87f6bc7b6eef7806b1d5b6a35ebec"
     sha256 big_sur:  "74662e467b363353c44a3dd7dfeb4a58457e13b2990fb6308c4f045060a53637"

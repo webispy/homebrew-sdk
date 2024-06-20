@@ -1,16 +1,15 @@
 class LibnuguPlugins < Formula
   desc "Default Plugins for NUGU SDK"
   homepage "https://github.com/nugu-developers/nugu-linux"
-  url "https://github.com/nugu-developers/nugu-linux/archive/742ca26.tar.gz"
-  version "1.7.3"
-  sha256 "b5d74620bd33f27118e3c30a5c27838a3b43e434b8640b58c6fef4674f6e6cd7"
+  url "https://github.com/nugu-developers/nugu-linux/archive/refs/tags/v1.7.4.tar.gz"
+  sha256 "56f481953f4f025a1cc35930be3fa5d3be0ea5cdd05ca14fe59d138037d1fd66"
   license "Apache-2.0"
 
   # brew install --build-from-source --HEAD libnugu
   head "https://github.com/nugu-developers/nugu-linux.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/webispy/homebrew-sdk/releases/download/libnugu-plugins-1.7.3"
+    root_url "https://github.com/webispy/homebrew-sdk/releases/download/libnugu-plugins-1.7.4"
     rebuild 3
     sha256 cellar: :any, arm64_monterey: "0b3842276fe11a285274037c294dea3529a46a20acd5ad261e2165855655703a"
     sha256 cellar: :any, monterey:       "7ce832aede5491d5351feec81e7d76a14678c7056dea05741bb127c41703c98c"
@@ -19,13 +18,9 @@ class LibnuguPlugins < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "gst-plugins-bad"
-  depends_on "gst-plugins-base"
-  depends_on "gst-plugins-good"
   depends_on "gstreamer"
   depends_on "libnugu"
   depends_on "libnugu-epd"
-  depends_on "gst-plugins-ugly" => :recommended
 
   def install
     args = %w[

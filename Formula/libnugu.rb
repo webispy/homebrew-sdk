@@ -1,16 +1,15 @@
 class Libnugu < Formula
   desc "C/C++ library for NUGU SDK"
   homepage "https://github.com/nugu-developers/nugu-linux"
-  url "https://github.com/nugu-developers/nugu-linux/archive/742ca26.tar.gz"
-  version "1.7.3"
-  sha256 "b5d74620bd33f27118e3c30a5c27838a3b43e434b8640b58c6fef4674f6e6cd7"
+  url "https://github.com/nugu-developers/nugu-linux/archive/refs/tags/v1.7.4.tar.gz"
+  sha256 "56f481953f4f025a1cc35930be3fa5d3be0ea5cdd05ca14fe59d138037d1fd66"
   license "Apache-2.0"
 
   # brew install --build-from-source --HEAD libnugu
   head "https://github.com/nugu-developers/nugu-linux.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/webispy/homebrew-sdk/releases/download/libnugu-1.7.3"
+    root_url "https://github.com/webispy/homebrew-sdk/releases/download/libnugu-1.7.4"
     rebuild 4
     sha256 cellar: :any, arm64_monterey: "0f798396fc714d4e086c9cbe65e10c845ea5b99831e3e95313bd6b038cc20107"
     sha256 cellar: :any, monterey:       "a5d427411034601d2096add45f6087c12e1b844c2f51cb2dec37901a2abf3251"

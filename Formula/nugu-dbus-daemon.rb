@@ -1,9 +1,9 @@
 class NuguDbusDaemon < Formula
   desc "SESSION_BUS based dbus-daemon for NUGU service"
   homepage "https://github.com/nugulinux/nugu-daemon"
-  url "https://github.com/nugulinux/nugu-daemon/archive/3c2c624.tar.gz"
-  version "1.7.3"
-  sha256 "9bd7b933a4c1ea2b906362dfd47091640740345ddbed3c5528a38ed0117ef06c"
+  # Use URL fragment to prevent brew audit failures for private repository.
+  url "https://github.com/nugulinux/#nugu-daemon/archive/refs/tags/v1.7.4.tar.gz", using: GitHubPrivateRepositorySnapshotDownloadStrategy
+  sha256 "a4c7e842c9e4c19c771f1a2e0ab60211ad54d57c2aa4c275317aa3a657f22d3e"
   license "Apache-2.0"
 
   bottle do
@@ -42,8 +42,6 @@ class NuguDbusDaemon < Formula
         export DBUS_SESSION_BUS_ADDRESS=unix:path=#{HOMEBREW_PREFIX}#{sock_path}
     EOS
   end
-
-  plist_options startup: true
 
   test do
     system "true"

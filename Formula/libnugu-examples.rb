@@ -1,16 +1,15 @@
 class LibnuguExamples < Formula
   desc "Example applications for NUGU SDK"
   homepage "https://github.com/nugu-developers/nugu-linux"
-  url "https://github.com/nugu-developers/nugu-linux/archive/742ca26.tar.gz"
-  version "1.7.3"
-  sha256 "b5d74620bd33f27118e3c30a5c27838a3b43e434b8640b58c6fef4674f6e6cd7"
+  url "https://github.com/nugu-developers/nugu-linux/archive/refs/tags/v1.7.4.tar.gz"
+  sha256 "56f481953f4f025a1cc35930be3fa5d3be0ea5cdd05ca14fe59d138037d1fd66"
   license "Apache-2.0"
 
   # brew install --build-from-source --HEAD libnugu
   head "https://github.com/nugu-developers/nugu-linux.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/webispy/homebrew-sdk/releases/download/libnugu-examples-1.7.3"
+    root_url "https://github.com/webispy/homebrew-sdk/releases/download/libnugu-examples-1.7.4"
     rebuild 3
     sha256 cellar: :any, arm64_monterey: "5fef9fa2ee7621f25c63f778c9f0e7d9e5073cc321d4cd27a9748918f2d2baba"
     sha256 cellar: :any, monterey:       "b1225812094cfb914b6b6266beae78e619c157ae69a437f215ffaffe8f9b1ca6"

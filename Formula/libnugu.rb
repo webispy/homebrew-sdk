@@ -20,7 +20,6 @@ class Libnugu < Formula
   depends_on "pkg-config" => :build
   depends_on "curl"
   depends_on "glib"
-  depends_on "jsoncpp"
   depends_on "libnugu-epd"
   depends_on "libnugu-kwd"
   depends_on "openssl"
@@ -29,7 +28,6 @@ class Libnugu < Formula
   def install
     args = %W[
       -DENABLE_LIBRARY_ONLY=ON
-      -DENABLE_BUILTIN_JSONCPP=OFF
       -DENABLE_BUILTIN_CURL=OFF
       -DENABLE_GSTREAMER_PLUGIN=OFF
       -DPLUGIN_DIR=#{HOMEBREW_PREFIX}/lib/nugu

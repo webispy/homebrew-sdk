@@ -20,19 +20,17 @@ class Libnugu < Formula
   depends_on "pkg-config" => :build
   depends_on "curl"
   depends_on "glib"
+  depends_on "gstreamer"
   depends_on "libnugu-epd"
   depends_on "libnugu-kwd"
   depends_on "openssl"
+  depends_on "opus"
   depends_on "rapidjson"
 
   def install
     args = %W[
-      -DENABLE_LIBRARY_ONLY=ON
       -DENABLE_BUILTIN_CURL=OFF
-      -DENABLE_GSTREAMER_PLUGIN=OFF
-      -DENABLE_OPUS_PLUGIN=OFF
-      -DENABLE_BUILTIN_PLUGIN=OFF
-      -DPLUGIN_DIR=#{HOMEBREW_PREFIX}/lib/nugu
+      -DPLUGIN_DIR=#{lib}/nugu
       -DPACKAGING=ON
     ]
 

@@ -19,7 +19,6 @@ class NuguDaemon < Formula
   depends_on "pkg-config" => :build
   depends_on "dbus"
   depends_on "libnugu-extension"
-  depends_on "libnugu-plugins"
   depends_on "nugu-dbus-daemon"
 
   def install

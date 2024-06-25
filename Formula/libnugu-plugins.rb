@@ -2,8 +2,8 @@ class LibnuguPlugins < Formula
   desc "Default Plugins for NUGU SDK"
   homepage "https://github.com/nugu-developers/nugu-linux"
   url "https://github.com/nugu-developers/nugu-linux.git",
-    tag:      "v1.7.5",
-    revision: "68363d7f73ec1e4f31c7dbdd3ca7926d8c29bb7c"
+    tag:      "v1.7.6",
+    revision: "06461dbf3e6cdbc94d47a80412290a449c0dc5fc"
   license "Apache-2.0"
 
   # brew install --build-from-source --HEAD libnugu
@@ -21,10 +21,12 @@ class LibnuguPlugins < Formula
   depends_on "gstreamer"
   depends_on "libnugu"
   depends_on "libnugu-epd"
+  depends_on "opus"
 
   def install
     args = %w[
       -DENABLE_PLUGINS_ONLY=ON
+      -DENABLE_BUILTIN_PLUGIN=OFF
       -DPACKAGING=ON
     ]
 

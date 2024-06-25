@@ -4,8 +4,8 @@ class LibnuguExtension < Formula
   desc "C/C++ library for NUGU SDK Extension"
   homepage "https://github.com/nugulinux/nugu-extension"
   # Use URL fragment to prevent brew audit failures for private repository.
-  url "https://github.com/webispy/#nugu-extension/archive/refs/tags/v1.7.5.tar.gz", using: GitHubPrivateRepositorySnapshotDownloadStrategy
-  sha256 "efff22defb5586a84a2e19a893d2f466e6f7e64622396033a118c8c32f20843d"
+  url "https://github.com/webispy/#nugu-extension/archive/refs/tags/v1.7.6.tar.gz", using: GitHubPrivateRepositorySnapshotDownloadStrategy
+  sha256 "54f7489a1ea330f2b16ae792a934861303601e59bd3b39893deff46aabc117a8"
   license "Apache-2.0"
 
   bottle do

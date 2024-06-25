@@ -33,6 +33,7 @@ class Libnugu < Formula
       -DENABLE_BUILTIN_CURL=OFF
       -DPLUGIN_DIR=#{lib}/nugu
       -DPACKAGING=ON
+      -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

@@ -4,8 +4,9 @@ class NuguDaemon < Formula
   desc "Daemon for NUGU service"
   homepage "https://github.com/webispy/nugu-daemon"
   # Use URL fragment to prevent brew audit failures for private repository.
-  url "https://github.com/webispy/#nugu-daemon/archive/refs/tags/1.7.6.tar.gz", using: GitHubPrivateRepositorySnapshotDownloadStrategy
-  sha256 "5848784324fe77ec808c45bd49a5f1a4e33e94ee5b374661024ccd34a9e20753"
+  url "https://github.com/webispy/#nugu-daemon/archive/refs/heads/master.tar.gz", using: GitHubPrivateRepositorySnapshotDownloadStrategy
+  version "1.7.6"
+  sha256 "bc9790569bfd60c8c4d98acaea33f8316f86c8e81d2ace7bbbd640b338fcd9b4"
   license "Apache-2.0"
 
   bottle do
@@ -23,7 +24,6 @@ class NuguDaemon < Formula
 
   def install
     args = %W[
-      -DENABLE_PULSEAUDIO=OFF
       -DENABLE_SESSION_BUS=ON
       -DSESSION_BUS_ADDRESS=unix:path=#{HOMEBREW_PREFIX}#{Formula["nugu-dbus-daemon"].sock_path}
     ]
